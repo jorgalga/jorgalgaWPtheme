@@ -22,6 +22,9 @@
                     the_post_thumbnail();
                     the_title();
                     the_content();
+        
+                    $description =  get_the_content();
+                    $description = substr($description,0,90).'...';
             
                     ?>
                     <!--Card Light-->
@@ -30,7 +33,8 @@
 
                         <!--Card image-->
                         <div class="view overlay hm-white-slight">
-                            <img src="http://mdbootstrap.com/images/reg/reg%20(59).jpg" class="img-fluid" alt="">
+                            <!--<img src="http://mdbootstrap.com/images/reg/reg%20(59).jpg" class="img-fluid" alt="">-->
+                            <img src="<?php echo the_post_thumbnail_url();  ?>" class="img-fluid" alt="">
                             <a href="#">
                                 <div class="mask"></div>
                             </a>
@@ -43,10 +47,12 @@
                         <!--Card content-->
                         <div class="card-block">
                             <!--Title-->
-                            <h4 class="card-title">Card title</h4>
+                            <h4 class="card-title"><?php echo get_the_title(); ?></h4>
                             <hr>
                             <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            
+                            
+                            <p class="card-text"><?php echo $description; ?></p>
                             <a href="" class="link-text"><h5>Read more <i class="fa fa-chevron-right"></i></h5></a>
                         </div>
                         <!--/.Card content-->
