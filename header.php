@@ -34,18 +34,32 @@
                 <a class="navbar-brand" href="http://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">MDB</a>
                 <!--Links-->
                 <ul class="nav navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#best-features">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                    
+                    
+                    
+                    <?php 
+                      $index = 0;
+                      $cSlug = get_post()->post_name;
+                      
+                      $pages = get_pages(); 
+                      foreach ( $pages as $page ) {
+                          
+                        if(strcmp($cSlug , $page->post_name)==0){
+                             $option = '<li class="nav-item active"><a class="nav-link" href="' . get_page_link( $page->ID ) . '">';
+                        }
+                        else{
+                             $option = '<li class="nav-item"><a class="nav-link" href="' . get_page_link( $page->ID ) . '">';
+                        }
+                        
+                       
+                        $option .= $page->post_title;
+                        $option .= '</a></li>';
+                        echo $option;
+                        $index++;
+                      }
+                    ?>
+                    
+                    
                 </ul>
             </div>
             <!--/.Collapse content-->

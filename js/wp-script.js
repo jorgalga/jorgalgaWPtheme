@@ -23,6 +23,8 @@ $( document ).ready(function() {
      $('#myNavbar').on('shown.bs.collapse', function () {
         $(window).trigger('resize.px.parallax');
     });
+    
+
 
     
     
