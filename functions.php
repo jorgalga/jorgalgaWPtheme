@@ -22,6 +22,7 @@ add_action( 'wp_enqueue_scripts', 'startwordpress_scripts' );
 function css_function() {
     startwordpress_google_fonts();
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.6' );
+    wp_enqueue_style( 'material', get_template_directory_uri() . '/css/mdb.min.css', array(), '3.3.6' );
 	wp_enqueue_style( 'blog', get_template_directory_uri() . '/css/blog.css' );
    
     
@@ -32,31 +33,37 @@ add_action( 'wp_footer', 'css_function' );
 function my_scripts()   
 {  
 
-        wp_deregister_script('jquery');  
+     wp_deregister_script('jquery');  
   
-        // Load a copy of jQuery from the Google API CDN  
-        // The last parameter set to TRUE states that it should be loaded  
-        // in the footer.  
-        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', FALSE, '1.11.0', TRUE);  
+    // Load a copy of jQuery from the Google API CDN  
+    // The last parameter set to TRUE states that it should be loaded  
+    // in the footer.  
+    wp_register_script('jquery', get_template_directory_uri() . '/js/jquery-2.2.3.min.js', FALSE, '1.11.0', TRUE);  
   
-        wp_enqueue_script('jquery');  
+    wp_enqueue_script('jquery');  
         
-        wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.3.6', true );
+    wp_enqueue_script('tether', get_template_directory_uri() . '/js/tether.min.js', array('jquery'), '3.3.6', true );
+    
+    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.3.6', true );
+    wp_enqueue_script('material', get_template_directory_uri() . '/js/mdb.min.js', array('jquery'), '3.3.6', true );
         
-        wp_enqueue_script( 'less', get_template_directory_uri() . '/js/less.min.js', array('jquery'), '1.0', true );
-        wp_enqueue_script( 'paralax', get_template_directory_uri() . '/js/parallax.min.js', array('jquery'), '1.0', true );
-        wp_enqueue_script( 'wp-script', get_template_directory_uri() . '/js/wp-script.js', array('jquery'), '1.0', true );
-
+    wp_enqueue_script( 'less', get_template_directory_uri() . '/js/less.min.js', array('jquery'), '1.0', true );
+    wp_enqueue_script( 'paralax', get_template_directory_uri() . '/js/parallax.min.js', array('jquery'), '1.0', true );
+    wp_enqueue_script( 'wp-script', get_template_directory_uri() . '/js/wp-script.js', array('jquery'), '1.0', true );
 }  
 add_action('init', 'my_scripts');  
 
 
-// Add Google Fonts
+// Add Fonts
 function startwordpress_google_fonts() {
-				wp_register_style('OpenSans', '//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
-				wp_enqueue_style( 'OpenSans');
+    wp_register_style('OpenSans', '//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+	wp_enqueue_style( 'OpenSans');
+    
+    wp_register_style('FontAwesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css');
+	wp_enqueue_style( 'FontAwesome');
 }
-//add_action('wp_print_styles', 'startwordpress_google_fonts');
+add_action('wp_print_styles', 'startwordpress_google_fonts');
+
 
 // WordPress Titles
 function startwordpress_wp_title( $title, $sep ) {
