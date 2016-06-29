@@ -7,7 +7,7 @@
 <?php get_header(); ?>
 <div class="container">
 	<div class="row">
-		<div class="col-sm-12">
+		
 			 <?php 
                 
                 $custom_posts = new WP_Query( array(
@@ -23,10 +23,48 @@
                     the_title();
                     the_content();
             
+                    ?>
+                    <!--Card Light-->
+                    <div class="col-sm-4">
+                    <div class="card">
+
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight">
+                            <img src="http://mdbootstrap.com/images/reg/reg%20(59).jpg" class="img-fluid" alt="">
+                            <a href="#">
+                                <div class="mask"></div>
+                            </a>
+                        </div>
+                        <!--/.Card image-->
+
+                        <!--Social shares button-->
+                        <a class="activator"><i class="fa fa-share-alt"></i></a>
+
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Card title</h4>
+                            <hr>
+                            <!--Text-->
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="" class="link-text"><h5>Read more <i class="fa fa-chevron-right"></i></h5></a>
+                        </div>
+                        <!--/.Card content-->
+
+                    </div>
+                    <!--/.Card Light-->
+                    </div> <!-- /.col -->
+                    <?php
+
+
+            
+            
+            
+            
 				endwhile; endif; 
 			?>
 
-		</div> <!-- /.col -->
+		
 
 	</div> <!-- /.row -->
 
