@@ -51,11 +51,18 @@ $( document ).ready(function() {
 
      $(".button-collapse").sideNav();
     
-    $('.grid').masonry({
+    var $grid = $('.grid').masonry({
       itemSelector: '.grid-item', // use a separate class for itemSelector, other than .col-
       columnWidth: '.grid-sizer',
       percentPosition: true
     });
+    
+    $grid.on( 'layoutComplete',
+      function( event, laidOutItems ) {
+      
+        $(window).trigger('resize.px.parallax');
+      }
+    );
 
     
 });
