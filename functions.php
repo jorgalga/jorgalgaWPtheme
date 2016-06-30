@@ -49,6 +49,7 @@ function my_scripts()
         
     wp_enqueue_script( 'less', get_template_directory_uri() . '/js/less.min.js', array('jquery'), '1.0', true );
     wp_enqueue_script( 'paralax', get_template_directory_uri() . '/js/parallax.min.js', array('jquery'), '1.0', true );
+    wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array('jquery'), '1.0', true );
     wp_enqueue_script( 'wp-script', get_template_directory_uri() . '/js/wp-script.js', array('jquery'), '1.0', true );
 }  
 add_action('init', 'my_scripts');  

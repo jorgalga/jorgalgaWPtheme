@@ -23,7 +23,7 @@
     <!--/. SideNav slide-out button -->
 
     <!-- Sidebar navigation -->
-    <ul id="slide-out" class="side-nav fixed default-side-nav light-side-nav">
+    <ul id="slide-out" class="side-nav  default-side-nav light-side-nav">
 
         <!-- Logo -->
         <div class="logo-wrapper waves-light">
@@ -38,8 +38,33 @@
             </div>
         </form>
         <!--/.Search Form-->
+        
+        <ul>
+            <?php 
+                      $index = 0;
+                      $cSlug = get_post()->post_name;
+                      
+                      $pages = get_pages(); 
+                      foreach ( $pages as $page ) {
+                          
+                        if(strcmp($cSlug , $page->post_name)==0){
+                             $option = '<li class="nav-item active"><a class="waves-effect" href="' . get_page_link( $page->ID ) . '">';
+                        }
+                        else{
+                             $option = '<li class="nav-item"><a class="waves-effect" href="' . get_page_link( $page->ID ) . '">';
+                        }
+                        
+                       
+                        $option .= $page->post_title;
+                        $option .= '</a></li>';
+                        echo $option;
+                        $index++;
+                      }
+                ?>
+            
+        </ul>
 
-        <!-- Side navigation links -->
+        <!-- Side navigation links
         <ul class="collapsible collapsible-accordion">
             <li><a class="collapsible-header waves-effect">Click me</a>
                 <div class="collapsible-body">
@@ -72,6 +97,7 @@
                 </div>
             </li>
         </ul>
+        -->
         <!--/. Side navigation links -->
     </ul>
     <!--/. Sidebar navigation -->
