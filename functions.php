@@ -6,7 +6,7 @@ function startwordpress_scripts() {
 	
 	
 
-    /*
+    
     wp_enqueue_script( 
 	  'google-maps', 
 	  '//maps.googleapis.com/maps/api/js?key=AIzaSyBx6Z_eWgHsGhrHxfUYP_tRlK6yNE07CZs&callback=initMap', 
@@ -14,7 +14,7 @@ function startwordpress_scripts() {
 	  '1.0', 
 	  true 
 	);
-    */
+    
 }
 
 add_action( 'wp_enqueue_scripts', 'startwordpress_scripts' );

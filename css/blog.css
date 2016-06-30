@@ -55,6 +55,15 @@
     border-radius: 3px;
 }
 
+.button-collapse {
+    font-size: 2rem;
+    position: absolute;
+    padding: 1.5rem;
+    color: #fff;
+    z-index: 100;
+}
+
+
 
 #map{
     height: 400px;
@@ -133,6 +142,13 @@
   top: 12px;
   width: 0%;
   left: 50%;
+}
+
+/*
+ * Templates
+ */
+.portfolio-header{
+padding: 30px 0;
 }
 
 

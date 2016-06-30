@@ -18,56 +18,67 @@
 
 <body>
     
-    <!--Navbar-->
-    <nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
+    <!-- SideNav slide-out button -->
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+    <!--/. SideNav slide-out button -->
 
-        <!-- Collapse button-->
-        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
-            <i class="fa fa-bars"></i>
-        </button>
+    <!-- Sidebar navigation -->
+    <ul id="slide-out" class="side-nav fixed default-side-nav light-side-nav">
 
-        <div class="container">
-
-            <!--Collapse content-->
-            <div class="collapse navbar-toggleable-xs" id="collapseEx">
-                <!--Navbar Brand-->
-                <a class="navbar-brand" href="http://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">MDB</a>
-                <!--Links-->
-                <ul class="nav navbar-nav">
-                    
-                    
-                    
-                    <?php 
-                      $index = 0;
-                      $cSlug = get_post()->post_name;
-                      
-                      $pages = get_pages(); 
-                      foreach ( $pages as $page ) {
-                          
-                        if(strcmp($cSlug , $page->post_name)==0){
-                             $option = '<li class="nav-item active"><a class="nav-link" href="' . get_page_link( $page->ID ) . '">';
-                        }
-                        else{
-                             $option = '<li class="nav-item"><a class="nav-link" href="' . get_page_link( $page->ID ) . '">';
-                        }
-                        
-                       
-                        $option .= $page->post_title;
-                        $option .= '</a></li>';
-                        echo $option;
-                        $index++;
-                      }
-                    ?>
-                    
-                    
-                </ul>
-            </div>
-            <!--/.Collapse content-->
-
+        <!-- Logo -->
+        <div class="logo-wrapper waves-light">
+            <a href="#"><img src="http://mdbootstrap.com/wp-content/uploads/2015/12/mdb-white2.png" class="img-fluid flex-center"></a>
         </div>
+        <!--/. Logo -->
 
-    </nav>
-    <!--/.Navbar-->
+        <!--Search Form-->
+        <form class="search-form" role="search">
+            <div class="form-group waves-effect">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+        </form>
+        <!--/.Search Form-->
+
+        <!-- Side navigation links -->
+        <ul class="collapsible collapsible-accordion">
+            <li><a class="collapsible-header waves-effect">Click me</a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="#" class="waves-effect">Link</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Link</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li><a class="collapsible-header waves-effect">Click me</a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="#" class="waves-effect">Link</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Link</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li><a class="collapsible-header waves-effect">Click me</a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="#" class="waves-effect">Link</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Link</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <!--/. Side navigation links -->
+    </ul>
+    <!--/. Sidebar navigation -->
+
+    
+    
+    
     
     <!--Carousel Wrapper-->
 <div id="carousel-example-1" class="carousel slide carousel-fade" data-ride="carousel">
@@ -116,54 +127,8 @@
 
 
 
+  
     <!--
-    <nav class="navbar navbar-inverse ">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span style="display:none">.</span>
-                    <div id="nav-icon3">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                    
-                    
-                </button>
-                <a class="navbar-brand" href="http://www.jorgalga.com">jorgalga.com</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-
-
-                    <?php 
-                      $index = 0;
-                      $cSlug = get_post()->post_name;
-                      
-                      $pages = get_pages(); 
-                      foreach ( $pages as $page ) {
-                          
-                        if(strcmp($cSlug , $page->post_name)==0){
-                             $option = '<li><a class="active" href="' . get_page_link( $page->ID ) . '">';
-                        }
-                        else{
-                             $option = '<li><a href="' . get_page_link( $page->ID ) . '">';
-                        }
-                        
-                       
-                        $option .= $page->post_title;
-                        $option .= '</a></li>';
-                        echo $option;
-                        $index++;
-                      }
-                    ?>
-                </ul>
-
-            </div>
-        </div>
-    </nav>
-    -->
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
@@ -181,4 +146,5 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-3"></div>
         </div>
-    </div> <!-- /.container -->
+    </div>  /.container -->
+    
